@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RoleFit AI — Tailored Resume in 40 Seconds · Sahi</title>
+<meta name="description" content="Paste a Job Description. RoleFit AI generates a perfectly tailored, ATS-optimized resume in 40 seconds — locked to your verified Sahi record. Zero hallucinations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body data-nav="dark">
+<div id="mount-nav"></div>
+
+<section class="hero" style="background:var(--ink);color:var(--cloud);overflow:hidden">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 80% 20%,rgba(242,169,59,.18),transparent 60%),radial-gradient(ellipse 50% 35% at 10% 80%,rgba(15,166,125,.12),transparent 60%);pointer-events:none"></div>
+  <div class="container hero-inner">
+    <div class="hero-badge reveal" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12);color:var(--cloud)"><span class="pulse-dot saffron"></span><span><strong style="color:var(--saffron);font-weight:600">RoleFit AI</strong> · 1.2M resumes generated · 0 hallucinations</span></div>
+    <h1 class="reveal" style="color:#fff;max-width:880px">Paste a JD.<br>Get the resume that<br>wins <em style="color:var(--saffron)">that</em> <span class="accent">role.</span></h1>
+    <p class="hero-sub reveal" style="color:var(--mist);max-width:680px">Every career coach says: tailor your resume to each Job Description. Nobody does, because it takes three hours per application. <strong style="color:#fff">RoleFit does it in forty seconds</strong> — drawing only from your <em>verified</em> Sahi record. ATS-optimized for every Indian recruitment system.</p>
+    <div class="hero-cta reveal">
+      <a href="#try" class="btn btn-saffron btn-large">Try it now <span class="arr">↓</span></a>
+      <a href="auth.html?signup=1" class="btn btn-large" style="background:rgba(255,255,255,.06);color:#fff;border:1.5px solid rgba(255,255,255,.16)">Sign up free</a>
+    </div>
+  </div>
+</section>
+
+<section id="try" style="background:var(--ink);color:var(--cloud);padding:40px 0 120px">
+  <div class="container">
+    <div class="s-head reveal">
+      <span class="eyebrow" style="color:var(--saffron)">Live Demo</span>
+      <h2 style="color:#fff;margin-top:18px">See it work.<br><em style="color:var(--saffron)">Right now.</em></h2>
+      <p style="color:var(--mist)">Below is a real Job Description for a Senior PM role at a fintech. Click "Generate" and watch RoleFit construct a tailored resume from a verified career record — line by line, in real time.</p>
+    </div>
+    <div class="demo">
+      <div class="demo-pane reveal">
+        <h4>Job Description Input</h4>
+        <div class="demo-input"><b>Senior Product Manager — FinTech</b>
+Bengaluru · 4-7 years experience · Hybrid
+
+We're hiring a Senior PM to own our UPI &amp; lending products serving Tier-2 India. You will:
+• Define product strategy for 10M+ MAU
+• Lead a cross-functional pod (eng, design, data)
+• Ship at 2-week cadence with measurable NPS lift
+• Partner with risk + compliance teams
+
+Must-have:
+• 4+ years PM experience, ideally fintech
+• Strong analytics fluency (SQL, Mixpanel, Amplitude)
+• Experience with vernacular UX
+• Track record on retention metrics
+
+Nice-to-have:
+• B2B2C fintech exposure
+• Tier-2/3 user research experience</div>
+        <div class="demo-cta">
+          <button class="btn btn-saffron btn-large" id="generate-btn"><span>Generate RoleFit Resume</span> <span class="arr">→</span></button>
+        </div>
+      </div>
+      <div class="demo-pane reveal">
+        <h4 id="output-h">Sahi Resume Output</h4>
+        <div class="demo-output empty" id="output">
+          <span>Click "Generate" to see your verified Sahi record reshaped for this exact role…</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="container">
+    <div class="s-head reveal">
+      <span class="eyebrow">How RoleFit Works</span>
+      <h2>Four steps.<br><em>Forty</em> seconds.</h2>
+      <p>RoleFit is not ChatGPT with a resume prompt. It is a multi-stage system that decomposes the JD, maps it to your verified record, regenerates a structured resume, and validates against Indian ATS schemas — all locked to facts that already exist in your Sahi profile.</p>
+    </div>
+    <div class="grid-4">
+      <div class="card card-hover reveal"><span class="card-num">Step 01</span><div class="card-icon">📋</div><h4>Decompose</h4><p>The JD is broken into role intent, must-haves, nice-to-haves, ATS keywords, and tone. We extract structured signals you'd never have time to read for.</p></div>
+      <div class="card card-hover reveal"><span class="card-num">Step 02</span><div class="card-icon saffron">🔗</div><h4>Map</h4><p>Each JD signal is matched to facts in your verified Sahi record: prior roles, achievements, tools, languages, projects. No invention. Only re-arrangement of truth.</p></div>
+      <div class="card card-hover reveal"><span class="card-num">Step 03</span><div class="card-icon teal">✨</div><h4>Regenerate</h4><p>Bullet points are re-written, re-ordered, and re-framed to lead with the most relevant achievements. Voice, tense, and metric density are tuned to the role's seniority.</p></div>
+      <div class="card card-hover reveal"><span class="card-num">Step 04</span><div class="card-icon">🛡️</div><h4>Validate</h4><p>The output passes through six Indian ATS schemas (Workday, Taleo, Keka, Darwinbox, Zoho Recruit, Naukri RMS). You see a Fit Score and an apply-ready PDF.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--paper)">
+  <div class="container">
+    <div class="s-head center reveal">
+      <span class="eyebrow">RoleFit vs ChatGPT vs Manual</span>
+      <h2>Three ways to tailor a resume.<br><em>Only one is honest.</em></h2>
+    </div>
+    <div class="reveal" style="overflow-x:auto">
+      <table class="compare">
+        <thead><tr><th>Capability</th><th class="highlight">RoleFit AI</th><th>ChatGPT / Generic LLM</th><th>Doing it Manually</th></tr></thead>
+        <tbody>
+          <tr><td>Time per resume</td><td class="yes">~40 seconds</td><td class="partial">5-10 minutes</td><td class="no">2-3 hours</td></tr>
+          <tr><td>Hallucination risk</td><td class="yes">Zero (locked to verified record)</td><td class="no">High (fabricates dates, jobs, metrics)</td><td class="yes">Zero</td></tr>
+          <tr><td>Indian ATS optimization</td><td class="yes">Pre-trained on 6 Indian ATS systems</td><td class="no">Generic</td><td class="partial">Manual research</td></tr>
+          <tr><td>Vernacular output</td><td class="yes">22 Indian languages</td><td class="partial">English-leaning</td><td class="partial">Manual</td></tr>
+          <tr><td>JD decomposition</td><td class="yes">Structured signal extraction</td><td class="no">Single-shot prompt</td><td class="partial">Skim &amp; guess</td></tr>
+          <tr><td>Fit Score &amp; gap analysis</td><td class="yes">Quantified per role</td><td class="no">None</td><td class="no">Subjective</td></tr>
+          <tr><td>Career-record continuity</td><td class="yes">Linked to lifelong Sahi profile</td><td class="no">Re-paste every time</td><td class="no">Manual rewrite</td></tr>
+          <tr><td>One-click apply</td><td class="yes">Built-in</td><td class="no">No</td><td class="no">No</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="s-head reveal">
+      <span class="eyebrow">ATS-Native</span>
+      <h2>Pre-trained on every<br>Indian recruitment system <em>worth using.</em></h2>
+      <p>Most "AI resume builders" produce output that breaks the moment a recruiter's ATS tries to parse it. RoleFit's output is validated against the six ATS systems used by 90%+ of Indian recruiters.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card card-hover reveal"><div class="colo colo-1" style="margin-bottom:18px">W</div><h4>Workday</h4><p>Used by Flipkart, Tata, Mahindra, Wipro. RoleFit output passes Workday's parser at 99.4% accuracy in our internal tests.</p></div>
+      <div class="card card-hover reveal"><div class="colo colo-2" style="margin-bottom:18px">T</div><h4>Taleo (Oracle)</h4><p>Used by ICICI, HDFC, Reliance, ITC. Optimized field-mapping for Taleo's older XML schema.</p></div>
+      <div class="card card-hover reveal"><div class="colo colo-3" style="margin-bottom:18px">K</div><h4>Keka</h4><p>India's most-used HRMS for SMBs. Tight integration with Keka's parsing rules.</p></div>
+      <div class="card card-hover reveal"><div class="colo colo-4" style="margin-bottom:18px">D</div><h4>Darwinbox</h4><p>Used by Vodafone, AirAsia, Mahindra, Adani. Section-order tuned to Darwinbox preferences.</p></div>
+      <div class="card card-hover reveal"><div class="colo colo-5" style="margin-bottom:18px">Z</div><h4>Zoho Recruit</h4><p>India's most-deployed recruiting tool for mid-market. Native Zoho field-name compatibility.</p></div>
+      <div class="card card-hover reveal"><div class="colo colo-6" style="margin-bottom:18px">N</div><h4>Naukri RMS</h4><p>Yes — even legacy portals' ATS systems. Sahi resumes work everywhere, including the platforms we're replacing.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--paper)">
+  <div class="container">
+    <div class="s-head center reveal">
+      <span class="eyebrow">RoleFit Pricing</span>
+      <h2>Free for <em>almost everyone.</em></h2>
+      <p>3 RoleFit resumes per month, free, forever. Power-users upgrade to Career OS Premium for unlimited generations + analytics.</p>
+    </div>
+    <div class="grid-3 reveal">
+      <div class="price">
+        <h3>Free</h3>
+        <p class="price-desc">Get a feel for RoleFit. Forever.</p>
+        <div class="price-amount">₹0</div>
+        <div class="price-period">3 RoleFits per month</div>
+        <ul>
+          <li>3 tailored resumes / month</li>
+          <li>Indian ATS optimization</li>
+          <li>Fit Score per resume</li>
+          <li>Cover letter included</li>
+        </ul>
+        <a href="auth.html?signup=1" class="btn btn-ghost btn-block">Start Free</a>
+      </div>
+      <div class="price featured">
+        <div class="price-tag">Best Value</div>
+        <h3>Career OS Premium</h3>
+        <p class="price-desc">Unlimited RoleFit + everything else.</p>
+        <div class="price-amount">₹1,499</div>
+        <div class="price-period">/year · ~₹125/month</div>
+        <ul>
+          <li><strong>Unlimited</strong> RoleFit generations</li>
+          <li>Vernacular output (22 languages)</li>
+          <li>Career analytics &amp; salary benchmarks</li>
+          <li>Skill-gap proactive alerts</li>
+          <li>Priority Trust &amp; Safety support</li>
+        </ul>
+        <a href="pricing.html" class="btn btn-saffron btn-block">Upgrade to Premium</a>
+      </div>
+      <div class="price">
+        <h3>Pay-Per-Win</h3>
+        <p class="price-desc">For occasional applicants.</p>
+        <div class="price-amount">₹49</div>
+        <div class="price-period">per RoleFit · no subscription</div>
+        <ul>
+          <li>Pay only when you generate</li>
+          <li>Same quality as Premium</li>
+          <li>Bundle of 10 for ₹399</li>
+          <li>Unused credits never expire</li>
+        </ul>
+        <a href="pricing.html" class="btn btn-ghost btn-block">Buy Credits</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container-narrow">
+    <div class="s-head center reveal">
+      <span class="eyebrow">Questions, answered</span>
+      <h2>RoleFit FAQ</h2>
+    </div>
+    <div class="faq reveal">
+      <div class="faq-item"><div class="faq-q">Will it ever invent fake experience or skills?</div><div class="faq-a"><br>Never. RoleFit can only re-arrange and re-frame facts already verified in your Sahi profile. If the JD asks for a skill you don't have, RoleFit will tell you — and recommend a Career OS module to build it. We literally cannot hallucinate, because the model is gated on your verified record at retrieval time.</div></div>
+      <div class="faq-item"><div class="faq-q">How is this different from ChatGPT with a resume prompt?</div><div class="faq-a"><br>Three ways. First, ChatGPT regularly fabricates achievements; we cannot. Second, RoleFit is pre-trained on Indian career archetypes and Indian ATS systems, so output is parsed cleanly. Third, RoleFit produces a quantified Fit Score so you know whether to apply at all — saving you from wasted applications.</div></div>
+      <div class="faq-item"><div class="faq-q">Is my career data safe?</div><div class="faq-a"><br>DPDP-Act native. Your verified record is encrypted at rest and never used to train shared models. RoleFit runs inference against your private record only. Read our <a href="#">privacy policy</a> for the legal version.</div></div>
+      <div class="faq-item"><div class="faq-q">What languages does RoleFit support?</div><div class="faq-a"><br>English at full quality on Day 1. Hindi, Tamil, Telugu, Kannada, Bengali, Marathi, Malayalam, Gujarati, Punjabi, Odia, Assamese, Urdu in beta. Reaching all 22 scheduled languages by Year 2.</div></div>
+      <div class="faq-item"><div class="faq-q">Can I export the resume?</div><div class="faq-a"><br>Yes — PDF, DOCX, plain-text, and a copy-paste-ready version for online forms. Free users get PDF export. Premium users get all formats plus a recruiter-shareable Sahi profile link.</div></div>
+      <div class="faq-item"><div class="faq-q">Does it write cover letters too?</div><div class="faq-a"><br>Every RoleFit generation includes a tailored cover letter that mirrors the resume's framing and references specific JD points. Two-paragraph default; expandable to one page.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-block">
+  <div class="container">
+    <h2>Stop applying with the same resume.<br>Start applying to <em>win.</em></h2>
+    <p>Sign up free. Verify your career record once. Get your first three RoleFit resumes today.</p>
+    <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+      <a href="auth.html?signup=1" class="btn btn-primary btn-large">Try RoleFit Free <span class="arr">→</span></a>
+      <a href="jobs.html" class="btn btn-ghost btn-large">Browse Verified Jobs</a>
+    </div>
+  </div>
+</section>
+
+<div id="mount-footer"></div>
+<script src="assets/partials.js"></script>
+<script src="assets/app.js"></script>
+<script>
+const generateBtn = document.getElementById('generate-btn');
+const output = document.getElementById('output');
+const outH = document.getElementById('output-h');
+const resumeData = [
+  {type:'name',text:'Anurag Sharma'},
+  {type:'role',text:'Senior Product Manager · 5.2 yrs · FinTech'},
+  {type:'section',text:'Verified Summary'},
+  {type:'line',text:'Product Manager with 5+ years building consumer fintech for Tier-2 India. Owned UPI &amp; lending products serving 8M MAU. Verified by Sahi.'},
+  {type:'section',text:'Experience · matched to JD'},
+  {type:'line',text:'<b>PhonePe</b> — Senior PM, Lending (2022-Present) · Led pod of 18 across eng/design/data. Shipped at fortnightly cadence.'},
+  {type:'line',text:'<b>Razorpay</b> — PM, UPI (2020-22) · Owned vernacular onboarding flow — drove +34% conversion in Hindi/Tamil markets.'},
+  {type:'line',text:'<b>Cred</b> — APM, Risk (2019-20) · Built risk-policy dashboards on Mixpanel + SQL. Partnered with compliance.'},
+  {type:'section',text:'Tools · matched ATS keywords'},
+  {type:'line',text:'SQL · Mixpanel · Amplitude · Figma · Jira · Vernacular UX research · A/B testing · Retention modeling'}
+];
+generateBtn?.addEventListener('click',()=>{
+  generateBtn.disabled = true;
+  output.classList.remove('empty');
+  output.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:240px;gap:4px"><span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span></div><div style="text-align:center;font-family:var(--mono);font-size:11px;color:var(--saffron);letter-spacing:.12em;margin-top:8px">DECOMPOSING JD · MAPPING VERIFIED RECORD · TAILORING</div>';
+  outH.innerHTML = 'Sahi Resume Output <span style="color:var(--mist);font-size:10px;font-family:var(--mono);margin-left:8px">generating…</span>';
+  setTimeout(()=>{
+    output.innerHTML = '';
+    resumeData.forEach((item,i)=>{
+      const el = document.createElement('div');
+      if(item.type==='name'){ el.className='resume-name resume-block'; el.textContent=item.text; }
+      else if(item.type==='role'){ el.className='resume-role resume-block'; el.textContent=item.text; }
+      else if(item.type==='section'){ el.className='resume-section resume-block'; el.textContent=item.text; }
+      else if(item.type==='line'){ el.className='resume-line resume-block'; el.innerHTML='<span>'+item.text+'</span>'; }
+      output.appendChild(el);
+      setTimeout(()=>el.classList.add('show'), 80*i);
+    });
+    const fit = document.createElement('div');
+    fit.className='resume-block fitscore';
+    fit.innerHTML = '<span style="font-family:var(--mono);font-size:10px;letter-spacing:.14em">RoleFit Score</span> <span class="n">94</span> <span style="font-size:11px;font-weight:500;color:var(--mist)">/ Strong match · Apply with confidence</span>';
+    output.appendChild(fit);
+    setTimeout(()=>fit.classList.add('show'), 80*resumeData.length+150);
+    outH.innerHTML = 'Sahi Resume Output <span style="color:var(--teal);font-size:10px;font-family:var(--mono);margin-left:8px">✓ ready · 0 hallucinations</span>';
+    generateBtn.disabled = false;
+    generateBtn.innerHTML = '<span>Generate Again</span> <span class="arr">↻</span>';
+  }, 1800);
+});
+</script>
+</body>
+</html>

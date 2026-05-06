@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing — Honest, Published, Outcome-Linked · Sahi</title>
+<meta name="description" content="Three plans for seekers. Three for employers. Every line item published. No 'Highlighter,' no 'Booster,' no 'Premium Visibility.' One promise: pay only when it works.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+.toggle-pill{display:inline-flex;background:var(--white);border:1px solid var(--cloud);border-radius:999px;padding:5px;box-shadow:var(--sh-sm)}
+.toggle-pill button{background:transparent;border:none;padding:10px 24px;font-weight:600;font-size:13px;color:var(--slate);border-radius:999px;cursor:pointer;transition:all .25s;font-family:inherit}
+.toggle-pill button.active{background:var(--indigo);color:#fff}
+.pricing-pane{display:none}
+.pricing-pane.active{display:block}
+</style>
+</head>
+<body>
+<div id="mount-nav"></div>
+
+<section class="hero short">
+  <div class="hero-bg"><div class="grid-bg"></div><div class="mesh"></div></div>
+  <div class="container hero-inner text-center" style="margin:0 auto">
+    <div class="hero-badge reveal" style="margin-left:auto;margin-right:auto"><span class="pulse-dot"></span><span>One promise · Every line item <strong style="color:var(--indigo);font-weight:600">published</strong></span></div>
+    <h1 class="reveal" style="font-size:clamp(40px,5.5vw,68px);text-align:center">Honest pricing,<br><em>built into</em> <span class="accent">the brand.</span></h1>
+    <p class="hero-sub reveal" style="margin-left:auto;margin-right:auto;text-align:center">No "Highlighter," no "Booster," no "Premium Visibility," no hidden upsell. Three plans for seekers. Three plans for employers. Cancel any time. Refunds within seven days.</p>
+    <div class="reveal flex justify-center mt-6">
+      <div class="toggle-pill" id="planToggle">
+        <button class="active" data-pane="seekers">For Seekers</button>
+        <button data-pane="employers">For Employers</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="seekers" class="pricing-pane active" style="padding:40px 0 80px">
+  <div class="container">
+    <div class="grid-3 reveal">
+      <div class="price price-hover">
+        <h3>Sahi Free</h3>
+        <p class="price-desc">Everything most job seekers need. Forever.</p>
+        <div class="price-amount">₹0</div>
+        <div class="price-period">Always free · No card required</div>
+        <ul>
+          <li>Unlimited verified job applications</li>
+          <li>Public recruiter Trust Scores</li>
+          <li>3 RoleFit AI resumes / month</li>
+          <li>Career OS lifelong record</li>
+          <li>WhatsApp + IVR support</li>
+          <li>Career discovery &amp; aptitude tests</li>
+        </ul>
+        <a href="auth.html?signup=1" class="btn btn-ghost btn-block">Get Started Free</a>
+      </div>
+      <div class="price featured price-hover">
+        <div class="price-tag">Most Popular</div>
+        <h3>Career OS Premium</h3>
+        <p class="price-desc">For serious career-builders &amp; switchers.</p>
+        <div class="price-amount">₹1,499</div>
+        <div class="price-period">/year · less than one month of LinkedIn Premium</div>
+        <ul>
+          <li>Everything in Free</li>
+          <li><strong>Unlimited</strong> RoleFit AI generations</li>
+          <li>Vernacular RoleFit (22 languages)</li>
+          <li>Career analytics &amp; salary benchmarks</li>
+          <li>Skill-gap proactive alerts</li>
+          <li>Resume export (PDF · DOCX · JSON)</li>
+          <li>Priority Trust &amp; Safety support</li>
+          <li>Hiring-manager-direct mandates</li>
+        </ul>
+        <a href="auth.html?signup=1" class="btn btn-saffron btn-block">Start 14-Day Trial</a>
+      </div>
+      <div class="price price-hover">
+        <h3>Interview Success Fee</h3>
+        <p class="price-desc">Pay only when it actually works.</p>
+        <div class="price-amount">₹499</div>
+        <div class="price-period">Once · only after a verified interview</div>
+        <ul>
+          <li>No interview = ₹0 charged</li>
+          <li>Capped at one fee per role</li>
+          <li>Refunded if interview was a no-show</li>
+          <li>Includes verified-outcome tracking</li>
+          <li>Counts toward Career OS history</li>
+          <li>Stackable with Free plan</li>
+        </ul>
+        <a href="auth.html?signup=1" class="btn btn-ghost btn-block">How It Works</a>
+      </div>
+    </div>
+
+    <div class="reveal mt-8" style="margin-top:60px">
+      <h3 class="text-center" style="font-family:var(--serif);font-size:24px;font-weight:600;margin-bottom:24px;text-align:center">Compare seeker plans</h3>
+      <div style="overflow-x:auto">
+        <table class="compare">
+          <thead><tr><th>Feature</th><th>Free</th><th class="highlight">Premium</th><th>Pay-Per-Win</th></tr></thead>
+          <tbody>
+            <tr><td>Verified job applications</td><td class="yes">Unlimited</td><td class="yes">Unlimited</td><td class="yes">Unlimited</td></tr>
+            <tr><td>RoleFit AI resumes</td><td class="partial">3 / month</td><td class="yes">Unlimited</td><td class="partial">₹49 each</td></tr>
+            <tr><td>Public recruiter Trust Scores</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Career OS lifelong record</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Vernacular RoleFit (22 languages)</td><td class="no">—</td><td class="yes">✓</td><td class="no">—</td></tr>
+            <tr><td>Salary benchmarks &amp; analytics</td><td class="no">—</td><td class="yes">✓</td><td class="no">—</td></tr>
+            <tr><td>Skill-gap proactive alerts</td><td class="no">—</td><td class="yes">✓</td><td class="no">—</td></tr>
+            <tr><td>Hiring-manager-direct mandates</td><td class="no">—</td><td class="yes">✓</td><td class="no">—</td></tr>
+            <tr><td>Resume export formats</td><td>PDF</td><td class="yes">All formats</td><td>PDF</td></tr>
+            <tr><td>Priority support</td><td class="no">—</td><td class="yes">✓</td><td class="no">—</td></tr>
+            <tr><td>Interview Success Fee per role</td><td>₹499</td><td>₹0</td><td>₹499</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="employers" class="pricing-pane" style="padding:40px 0 80px">
+  <div class="container">
+    <div class="grid-3 reveal">
+      <div class="price price-hover">
+        <h3>SMB</h3>
+        <p class="price-desc">For startups &amp; small teams (≤50 hires/yr).</p>
+        <div class="price-amount">₹49K</div>
+        <div class="price-period">/year · billed annually</div>
+        <ul>
+          <li>Unlimited verified job postings</li>
+          <li>Up to 5 recruiter seats</li>
+          <li>Basic ATS integration</li>
+          <li>Public Trust Score</li>
+          <li>30-day listing auto-expiry SLA</li>
+          <li>Email support</li>
+        </ul>
+        <a href="employers.html#book-demo" class="btn btn-ghost btn-block">Get Started</a>
+      </div>
+      <div class="price featured price-hover">
+        <div class="price-tag">Most Popular</div>
+        <h3>Mid-Market</h3>
+        <p class="price-desc">For Series-A to D companies.</p>
+        <div class="price-amount">₹2.5L</div>
+        <div class="price-period">/year · billed annually</div>
+        <ul>
+          <li>Everything in SMB</li>
+          <li><strong>Unlimited recruiter seats</strong></li>
+          <li>Full ATS integration (6 systems)</li>
+          <li>Sahi Fit Score on every application</li>
+          <li>Hire-quality analytics dashboard</li>
+          <li>White-glove onboarding</li>
+          <li>Slack-channel support</li>
+        </ul>
+        <a href="employers.html#book-demo" class="btn btn-saffron btn-block">Book a Demo</a>
+      </div>
+      <div class="price price-hover">
+        <h3>Enterprise</h3>
+        <p class="price-desc">For 1,000+ employees · listed companies.</p>
+        <div class="price-amount">₹12L</div>
+        <div class="price-period">/year · custom contracts</div>
+        <ul>
+          <li>Everything in Mid-Market</li>
+          <li>Dedicated Customer Success Manager</li>
+          <li>Custom KYC workflows</li>
+          <li>API access + webhook events</li>
+          <li>Quarterly hire-quality audits</li>
+          <li>Branded employer page</li>
+          <li>Priority Trust &amp; Safety</li>
+        </ul>
+        <a href="employers.html#book-demo" class="btn btn-dark btn-block">Talk to Sales</a>
+      </div>
+    </div>
+
+    <div class="card reveal" style="margin-top:40px;background:var(--paper);border-style:dashed;text-align:center;padding:32px">
+      <div style="font-family:var(--serif);font-size:20px;font-weight:600;color:var(--ink);margin-bottom:8px">Executive placement (CXO &amp; senior-management)</div>
+      <p style="font-size:14px;color:var(--slate);max-width:680px;margin:0 auto"><strong style="color:var(--ink)">8.33% of Year-1 CTC</strong>, paid only on offer acceptance. Includes deep candidate vetting, reference triangulation, and a 90-day replacement guarantee.</p>
+    </div>
+  </div>
+</section>
+
+<section class="manifesto" style="padding:100px 0">
+  <div class="container">
+    <span class="eyebrow">Why our pricing is honest</span>
+    <h2>Five things we will <em>never</em> charge for.</h2>
+    <div class="promises">
+      <div class="promise reveal"><div class="promise-n">01</div><div class="promise-t">"Premium Visibility"<span class="promise-d">Job posts can't pay to skip the queue</span></div></div>
+      <div class="promise reveal"><div class="promise-n">02</div><div class="promise-t">"Highlighting" / "Boosting"<span class="promise-d">Listings are equal. Period.</span></div></div>
+      <div class="promise reveal"><div class="promise-n">03</div><div class="promise-t">"Profile Push" Calls<span class="promise-d">No telecaller will ever pressure you</span></div></div>
+      <div class="promise reveal"><div class="promise-n">04</div><div class="promise-t">Resume Database Resale<span class="promise-d">Your data is yours. Forever.</span></div></div>
+      <div class="promise reveal"><div class="promise-n">05</div><div class="promise-t">"Career Booster" Bundles<span class="promise-d">No fake "growth" upsells</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container-narrow">
+    <div class="s-head center reveal">
+      <span class="eyebrow">Pricing FAQ</span>
+      <h2>The questions we get most.</h2>
+    </div>
+    <div class="faq reveal">
+      <div class="faq-item"><div class="faq-q">When does the Interview Success Fee get charged?</div><div class="faq-a"><br>Only after a verified interview happens — confirmed by both you and the employer through Sahi's two-way attestation. If the interview is rescheduled, no fee. If the interview is a no-show by the employer, no fee. If you choose not to attend, no fee. The ₹499 is capped at one fee per role you apply to.</div></div>
+      <div class="faq-item"><div class="faq-q">Why is Premium so cheap?</div><div class="faq-a"><br>Because we make money on employer subscriptions, not seeker subscriptions. Career OS Premium at ₹1,499/year is priced to cover infrastructure, not maximize ARPU. We'd rather have 100M people on the platform paying ₹1,499 than 5M people paying ₹15,000.</div></div>
+      <div class="faq-item"><div class="faq-q">Can I downgrade or cancel?</div><div class="faq-a"><br>Any time. One click in your account settings. Pro-rated refund within seven days of payment. Your verified profile stays free forever — you don't lose your Career OS record by cancelling.</div></div>
+      <div class="faq-item"><div class="faq-q">Do you offer education or NGO discounts?</div><div class="faq-a"><br>Yes. Premium is 50% off for verified students (with valid college ID). NGOs get our SMB plan at ₹0/year. Government departments get our Enterprise plan at a custom rate negotiated with each state.</div></div>
+      <div class="faq-item"><div class="faq-q">Are there annual or multi-year discounts?</div><div class="faq-a"><br>Premium is annual-only at ₹1,499 (no monthly option, because we don't want to lock anyone in). Employer plans get 10% off on a 24-month contract and 15% off on a 36-month contract. Talk to our team if you want a multi-year commit.</div></div>
+      <div class="faq-item"><div class="faq-q">Does the Sahi Verified employer badge cost extra?</div><div class="faq-a"><br>No. The badge is included in every employer plan. We don't gate trust signals behind a paywall — that would defeat the entire point.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-block">
+  <div class="container">
+    <h2>Pick a plan, or pay nothing.<br><em>Both are honest.</em></h2>
+    <p>The Free plan covers everything most Indians need. Upgrade only if it earns its place in your life.</p>
+    <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+      <a href="auth.html?signup=1" class="btn btn-primary btn-large">Get Started Free <span class="arr">→</span></a>
+      <a href="rolefit.html" class="btn btn-ghost btn-large">Try RoleFit AI</a>
+    </div>
+  </div>
+</section>
+
+<div id="mount-footer"></div>
+<script src="assets/partials.js"></script>
+<script src="assets/app.js"></script>
+<script>
+document.querySelectorAll('#planToggle button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('#planToggle button').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.pricing-pane').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');
+  document.getElementById(b.dataset.pane).classList.add('active');
+}));
+if(location.hash==='#employers') document.querySelector('[data-pane=employers]').click();
+</script>
+</body>
+</html>

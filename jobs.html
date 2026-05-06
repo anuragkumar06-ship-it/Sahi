@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Verified Jobs · Sahi</title>
+<meta name="description" content="Browse only KYC-verified employers with public Trust Scores. Every Sahi listing auto-expires on a 30-day SLA. No ghost jobs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div id="mount-nav"></div>
+
+<section class="hero short">
+  <div class="hero-bg"><div class="grid-bg"></div><div class="mesh"></div></div>
+  <div class="container hero-inner">
+    <div class="hero-badge reveal"><span class="pulse-dot"></span><span><strong style="color:var(--indigo);font-weight:600"><span id="jobCount">0</span> verified roles</strong> hiring this week · auto-expire after 30 days</span></div>
+    <h1 class="reveal" style="font-size:clamp(36px,5vw,60px);margin-bottom:18px">Only <em>verified</em><br>jobs. Period.</h1>
+    <p class="hero-sub reveal" style="margin-bottom:32px">Every employer below is GST + PAN + Aadhaar verified. Every recruiter has a public Trust Score. No ghost jobs. No fake recruiters. No bait-and-switch.</p>
+    <form class="search-bar reveal" id="searchForm" onsubmit="event.preventDefault();applyFilters();" style="margin-bottom:8px">
+      <input type="text" id="q" placeholder="Job title, company, or skill...">
+      <div class="sep"></div>
+      <input type="text" id="loc" placeholder="Location" style="max-width:180px">
+      <button type="submit" class="btn btn-primary">Search <span class="arr">→</span></button>
+    </form>
+  </div>
+</section>
+
+<section style="padding:40px 0 120px">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:280px 1fr;gap:32px;align-items:start" id="jobsLayout">
+
+      <aside class="filters reveal in" id="filters">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+          <div style="font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--charcoal);font-weight:700">Filters</div>
+          <button onclick="clearFilters()" style="background:none;border:none;font-size:11px;color:var(--indigo);font-weight:600;cursor:pointer">Clear all</button>
+        </div>
+
+        <label class="toggle" style="margin-bottom:14px">
+          <input type="checkbox" id="f-verified" checked>
+          <span class="sw"></span>
+          <span style="display:flex;align-items:center;gap:6px">Verified-only <span class="verified-tick">✓</span></span>
+        </label>
+
+        <div class="filter-group">
+          <h5>Category</h5>
+          <label class="check"><input type="radio" name="cat" value="all" checked><span>All categories</span></label>
+          <label class="check"><input type="radio" name="cat" value="engineering"><span>Engineering</span><span class="count">4</span></label>
+          <label class="check"><input type="radio" name="cat" value="product"><span>Product</span><span class="count">1</span></label>
+          <label class="check"><input type="radio" name="cat" value="design"><span>Design</span><span class="count">1</span></label>
+          <label class="check"><input type="radio" name="cat" value="data"><span>Data &amp; Analytics</span><span class="count">1</span></label>
+          <label class="check"><input type="radio" name="cat" value="marketing"><span>Marketing</span><span class="count">1</span></label>
+          <label class="check"><input type="radio" name="cat" value="sales"><span>Sales</span><span class="count">1</span></label>
+          <label class="check"><input type="radio" name="cat" value="operations"><span>Operations</span><span class="count">3</span></label>
+          <label class="check"><input type="radio" name="cat" value="internship"><span>Internships</span><span class="count">2</span></label>
+        </div>
+
+        <div class="filter-group">
+          <h5>Work mode</h5>
+          <label class="check"><input type="checkbox" name="mode" value="On-site"><span>On-site</span></label>
+          <label class="check"><input type="checkbox" name="mode" value="Hybrid"><span>Hybrid</span></label>
+          <label class="check"><input type="checkbox" name="mode" value="Remote"><span>Remote</span></label>
+        </div>
+
+        <div class="filter-group">
+          <h5>Experience</h5>
+          <label class="check"><input type="checkbox"><span>Internship</span></label>
+          <label class="check"><input type="checkbox"><span>0-2 yrs</span></label>
+          <label class="check"><input type="checkbox"><span>2-5 yrs</span></label>
+          <label class="check"><input type="checkbox"><span>5-10 yrs</span></label>
+          <label class="check"><input type="checkbox"><span>10+ yrs</span></label>
+        </div>
+
+        <div class="filter-group">
+          <h5>Location</h5>
+          <label class="check"><input type="checkbox"><span>Bengaluru</span></label>
+          <label class="check"><input type="checkbox"><span>Delhi NCR</span></label>
+          <label class="check"><input type="checkbox"><span>Mumbai</span></label>
+          <label class="check"><input type="checkbox"><span>Hyderabad</span></label>
+          <label class="check"><input type="checkbox"><span>Pune</span></label>
+          <label class="check"><input type="checkbox"><span>Chennai</span></label>
+          <label class="check"><input type="checkbox"><span>Tier-2/3 only</span></label>
+        </div>
+
+        <div class="filter-group">
+          <h5>Compensation</h5>
+          <label class="check"><input type="checkbox"><span>₹3-10 LPA</span></label>
+          <label class="check"><input type="checkbox"><span>₹10-25 LPA</span></label>
+          <label class="check"><input type="checkbox"><span>₹25-50 LPA</span></label>
+          <label class="check"><input type="checkbox"><span>₹50 LPA+</span></label>
+        </div>
+      </aside>
+
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;flex-wrap:wrap;gap:12px">
+          <div>
+            <div style="font-family:var(--serif);font-size:22px;font-weight:600;color:var(--ink);letter-spacing:-0.015em"><span id="jobCount2">0</span> verified roles</div>
+            <div style="font-size:12px;color:var(--slate);font-family:var(--mono);letter-spacing:0.06em">Updated <span id="updatedAt">just now</span></div>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center">
+            <span style="font-size:12px;color:var(--slate)">Sort by</span>
+            <select id="sort" onchange="applyFilters()" style="padding:8px 14px;border:1.5px solid var(--cloud);border-radius:999px;font-size:13px;color:var(--ink);background:#fff;font-weight:500;cursor:pointer">
+              <option value="recent">Most Recent</option>
+              <option value="trust">Highest Trust Score</option>
+              <option value="salary">Salary (High → Low)</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="results" class="grid-2"></div>
+
+        <div class="text-center mt-8">
+          <button class="btn btn-ghost btn-large" onclick="loadMore()" id="loadMoreBtn">Load 20 more verified jobs</button>
+        </div>
+
+        <div class="card" style="margin-top:60px;background:var(--ink);color:var(--cloud);border:none;padding:36px;display:flex;gap:20px;align-items:center;flex-wrap:wrap">
+          <div style="flex:1;min-width:280px">
+            <div style="font-family:var(--mono);font-size:11px;color:var(--saffron);letter-spacing:0.14em;text-transform:uppercase;font-weight:600;margin-bottom:10px">Why Sahi-only?</div>
+            <div style="font-family:var(--serif);font-size:24px;color:#fff;line-height:1.3;margin-bottom:8px">If a job isn't on Sahi, we can't promise it's real.</div>
+            <p style="color:var(--mist);font-size:13.5px;line-height:1.6;max-width:520px">Every other portal has fake listings, ghost jobs, and ghost recruiters. Our 48-hour KYC + 30-day auto-expiry SLA means every role you see was real, last week, posted by a verified human at a verified company.</p>
+          </div>
+          <a href="employers.html" class="btn btn-saffron">Are you an employer? <span class="arr">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="mount-footer"></div>
+<script src="assets/partials.js"></script>
+<script src="assets/app.js"></script>
+<script>
+let currentLimit = 12;
+function applyFilters(){
+  const q = document.getElementById('q').value.trim();
+  const cat = document.querySelector('input[name=cat]:checked')?.value || 'all';
+  const modes = Array.from(document.querySelectorAll('input[name=mode]:checked')).map(x=>x.value);
+  const verified = document.getElementById('f-verified').checked;
+  const sort = document.getElementById('sort').value;
+  renderJobs('results', {q, cat, mode:modes, verified, sort, limit:currentLimit});
+  document.getElementById('jobCount2').textContent = document.getElementById('jobCount').textContent;
+}
+function clearFilters(){
+  document.getElementById('q').value='';
+  document.getElementById('loc').value='';
+  document.querySelector('input[name=cat][value=all]').checked = true;
+  document.querySelectorAll('input[name=mode]').forEach(x=>x.checked=false);
+  document.querySelectorAll('.filter-group input[type=checkbox]:not(#f-verified)').forEach(x=>x.checked=false);
+  document.getElementById('f-verified').checked = true;
+  applyFilters();
+}
+function loadMore(){
+  currentLimit += 20; applyFilters();
+  toast('Loaded more verified jobs');
+}
+document.querySelectorAll('input[name=cat], input[name=mode], #f-verified').forEach(el=>el.addEventListener('change', applyFilters));
+applyFilters();
+</script>
+</body>
+</html>
